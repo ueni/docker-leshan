@@ -1,5 +1,8 @@
-FROM openjdk:8-jre-alpine
-MAINTAINER Bertrand Roussel <broussel@sierrawireless.com>
+FROM arm32v7/openjdk:8-jre-alpine
+
+LABEL maintainer="ueni, ueniueni"
+
+COPY qemu-arm-static /usr/bin
 
 RUN mkdir -p /opt/leshan
 RUN adduser -S -h /opt/leshan -s /sbin/nologin leshan
